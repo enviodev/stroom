@@ -1,0 +1,30 @@
+name: stroom
+networks:
+- id: 11155111
+  start_block: 0
+  end_block: null
+  contracts:
+  - name: slnBTC
+    address:
+    - 0x235f47A0AdAF094D47A2fF85943D538367961913
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 amount)
+    - event: Deposit(address indexed caller, address indexed owner, uint256 assets, uint256 shares)
+    - event: NewRewardsCycle(uint32 indexed cycleEnd, uint256 rewardAmount)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: TotalSupplyUpdatedEvent(uint256 _nonce, uint256 _totalBTCSupply, uint256 _totalShares)
+    - event: Transfer(address indexed from, address indexed to, uint256 amount)
+    - event: Withdraw(address indexed caller, address indexed receiver, address indexed owner, uint256 assets, uint256 shares)
+  - name: lnBTC
+    address:
+    - 0xb24696afAe649023D95F46ECa348E4482aD77dfd
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 amount)
+    - event: MintBtcEvent(address indexed _to, uint256 _value, bytes32 _btcDepositId)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Paused(address account)
+    - event: RedeemBtcEvent(address indexed _from, string _BTCAddress, uint256 _value, uint256 _id)
+    - event: Transfer(address indexed from, address indexed to, uint256 amount)
+    - event: Unpaused(address account)

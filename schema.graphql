@@ -1,0 +1,140 @@
+type EventsSummary {
+  id: ID!
+  lnBTC_Approval: [LnBTC_Approval!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_ApprovalCount: BigInt!
+  lnBTC_MintBtcEvent: [LnBTC_MintBtcEvent!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_MintBtcEventCount: BigInt!
+  lnBTC_OwnershipTransferred: [LnBTC_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_OwnershipTransferredCount: BigInt!
+  lnBTC_Paused: [LnBTC_Paused!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_PausedCount: BigInt!
+  lnBTC_RedeemBtcEvent: [LnBTC_RedeemBtcEvent!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_RedeemBtcEventCount: BigInt!
+  lnBTC_Transfer: [LnBTC_Transfer!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_TransferCount: BigInt!
+  lnBTC_Unpaused: [LnBTC_Unpaused!]! @derivedFrom(field: "eventsSummary")
+  lnBTC_UnpausedCount: BigInt!
+  slnBTC_Approval: [SlnBTC_Approval!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_ApprovalCount: BigInt!
+  slnBTC_Deposit: [SlnBTC_Deposit!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_DepositCount: BigInt!
+  slnBTC_NewRewardsCycle: [SlnBTC_NewRewardsCycle!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_NewRewardsCycleCount: BigInt!
+  slnBTC_OwnershipTransferred: [SlnBTC_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_OwnershipTransferredCount: BigInt!
+  slnBTC_TotalSupplyUpdatedEvent: [SlnBTC_TotalSupplyUpdatedEvent!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_TotalSupplyUpdatedEventCount: BigInt!
+  slnBTC_Transfer: [SlnBTC_Transfer!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_TransferCount: BigInt!
+  slnBTC_Withdraw: [SlnBTC_Withdraw!]! @derivedFrom(field: "eventsSummary")
+  slnBTC_WithdrawCount: BigInt!
+}
+
+type LnBTC_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type LnBTC_MintBtcEvent {
+  id: ID!
+  _to: String!
+  _value: BigInt!
+  _btcDepositId: String!
+  eventsSummary: String!
+}
+
+type LnBTC_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type LnBTC_Paused {
+  id: ID!
+  account: String!
+  eventsSummary: String!
+}
+
+type LnBTC_RedeemBtcEvent {
+  id: ID!
+  _from: String!
+  _BTCAddress: String!
+  _value: BigInt!
+  _id: BigInt!
+  eventsSummary: String!
+}
+
+type LnBTC_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type LnBTC_Unpaused {
+  id: ID!
+  account: String!
+  eventsSummary: String!
+}
+
+type SlnBTC_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type SlnBTC_Deposit {
+  id: ID!
+  caller: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+  eventsSummary: String!
+}
+
+type SlnBTC_NewRewardsCycle {
+  id: ID!
+  cycleEnd: BigInt!
+  rewardAmount: BigInt!
+  eventsSummary: String!
+}
+
+type SlnBTC_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type SlnBTC_TotalSupplyUpdatedEvent {
+  id: ID!
+  _nonce: BigInt!
+  _totalBTCSupply: BigInt!
+  _totalShares: BigInt!
+  eventsSummary: String!
+}
+
+type SlnBTC_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+
+type SlnBTC_Withdraw {
+  id: ID!
+  caller: String!
+  receiver: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+  eventsSummary: String!
+}
